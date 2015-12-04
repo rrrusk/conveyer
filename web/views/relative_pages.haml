@@ -1,0 +1,8 @@
+!!!
+%html
+  %body
+    %div
+      #{@page[:title]}
+    - @relative_pages.each do |val|
+      %div
+        %span #{val[:similarity]}, #{val[:title]}

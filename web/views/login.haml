@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %link{rel: "stylesheet", href: "/my.css"}
+  %body
+    %div.auth
+      %div #{@message}
+      %form{action: "/login", method: "get"}
+        %input.user-name{type: "text", name: "name", value: "", placeholder: "ユーザーネーム"}
+        %br
+        %input.user-password{type: "text", name: "password", value: "", placeholder: "パスワード"}
+        %br
+        %input.auth-button{type: "submit", value: "ログイン"}
+      %a{href: '/register'} 登録

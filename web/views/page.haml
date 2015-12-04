@@ -1,0 +1,8 @@
+!!!
+%html
+  %body
+    %div
+      %a{href: "#{@page[:url]}"} #{@page[:title]}
+    - @scores.each do |val|
+      %div
+        %span #{val[0]}, #{val[1]}

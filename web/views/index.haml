@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %link{rel: "stylesheet", href: "/my.css"}
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
+    %script{src: "/index.js"}
+  %body
+    %div.main
+      %a.to_recommend{href: "/recommend"} おすすめ記事を見る
+      %form.search{action: "/", method: "get"}
+        %input{type: "text", name: "url", value: "", placeholder: "URLを入力してください"}
+        %input.search-button{type: "submit", value: "search"}
+      %span #{@title}
+      - @relative_pages.each do |val|
+        %div
+          %a.page{data: {id: "#{val[:id]}"}, href: "#{val[:url]}"}
+            #{val[:title]}
+      - if @relative_pages.empty? && !@home
+        %p
+          表示できるページがありません。
+          %br
+          入力したurlが間違っている。
+          %br
+          データの取得が失敗した。
+          %br
+          関連するページが見つからなかったなどの理由が考えられます。
+      - if @home
+        %p
+          関連性の高いページの取得には数分かかる場合があります。

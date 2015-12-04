@@ -1,0 +1,59 @@
+* {
+  font-size: 16px;
+}
+a.true {
+  color: blue;
+}
+a.false {
+  color: red;
+}
+a.not {
+  color: black;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.page {
+  line-height: 120%;
+}
+.main {
+  width: 70%;
+  margin: 50px auto;
+}
+.auth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+}
+.search {
+  margin-bottom: 20px;
+}
+input[type=text] {
+  padding: 9px;
+  border: #999999 1px solid;
+  width: 300px;
+  margin-right: 0;
+}
+input[type=text]:focus {
+  border: #4fffc4 1px solid;
+}
+input[type=submit] {
+  margin-left: 0;
+  padding: 10px;
+  border: none;
+  background: #4fffc4;
+}
+.user-name, .user-password {
+  margin-bottom: 15px;
+}
+.auth-button {
+  margin-bottom: 10px;
+}

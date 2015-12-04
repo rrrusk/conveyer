@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %link{rel: "stylesheet", href: "/my.css"}
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
+    %script{src: "/index.js"}
+  %body
+    %div.main
+      %form.search{action: "/", method: "get"}
+        %input{type: "text", name: "url", value: "", placeholder: "URLを入力してください"}
+        %input.search-button{type: "submit", value: "search"}
+      %span あなたへのおすすめ記事
+      - @relative_pages.each do |val|
+        %div
+          %a.page{data: {id: "#{val[:id]}"}, href: "#{val[:url]}"}
+            #{val[:title]}

@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %link{rel: "stylesheet", href: "/my.css"}
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
+    %script{src: "/bayes.js"}
+  %body
+    %a{href: "/train"} train
+    - @pages.each do |val|
+      %div
+        %button.true{data: {id: "#{val[:page_id]}"}} true
+        %button.false{data: {id: "#{val[:page_id]}"}} false
+        %span #{val[:judge]}
+        %a{href: "#{val[:url]}", class: "#{val[:answer]}"}
+          #{val[:title]}
